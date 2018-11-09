@@ -12,7 +12,7 @@ class CoursePage extends Component {
 
   componentDidMount(){
     const courseId = Math.floor(Math.random() * 20000);
-    fetch(`/course/${courseId}`)
+    fetch(`http://localhost:7777/course/${courseId}`)
     .then((raw) => raw.json())
     .then((courseData) => {
       console.log('courseData', courseData);

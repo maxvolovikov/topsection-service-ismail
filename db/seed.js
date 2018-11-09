@@ -23,7 +23,7 @@ const mysql = require('mysql')
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'password'
+  password: ''
 })
 
 db.connect();
@@ -83,7 +83,7 @@ queryAsync('CREATE DATABASE IF NOT EXISTS udemy;')
       return parsed;
     }, { fields: '', values: [] , placeholders: '' })
   };
-  for (let i = 0; i < 20000; i += 1) {
+  for (let i = 1; i < 100; i += 1) {
     const studentCount = faker.random.number();
     const ratingCount = studentCount * 0.4;
     const randomBinary = () => Math.floor(Math.random() * 2);
