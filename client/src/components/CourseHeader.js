@@ -38,6 +38,7 @@ const CourseHeader  = (props) => {
       );
     }
   }
+  
   return (
     <div style={styles.headerContainerStyle}>
       <div style={styles.leftContainerStyle}>
@@ -45,7 +46,7 @@ const CourseHeader  = (props) => {
         <p style={styles.subtitleStyle}>{subtitle && subtitle.replace(/"/g, '')}</p>
         <div style={styles.ratingContainerStyle}>
           {renderTag()}
-          <Rating  defaultRating={avg_rating} icon='star' maxRating={5}  disabled/>
+          <Rating   className="starsBox" icon='star' defaultRating={avg_rating} maxRating={5} />
           <span style={styles.countsTextStyle}>{avg_rating + ` (${addCommaToNum(rating_count)} ratings)`}</span>
           <span style={styles.countsTextStyle}>{addCommaToNum(student_count) + ' students enrolled'}</span>
         </div>

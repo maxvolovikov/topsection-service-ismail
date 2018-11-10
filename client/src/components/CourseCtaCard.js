@@ -100,6 +100,7 @@ const renderPrecentage = () => {
 
 const styles = {
   cardStyle: {
+    position:'sticky',
     paddingTop: '4px',
     paddingLeft: '4px',
     paddingRight: '4px',

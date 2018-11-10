@@ -16,7 +16,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/', (req, res) => res.render('index.html'));
 
 app.get('/course/:courseId', (req, res) => {
-  Course.findCourseById(req.body.courseId)
+  console.log(req.params.courseId)
+  Course.findCourseById(req.params.courseId)
+  
   .then((course) => {
     res.send(course);
   })

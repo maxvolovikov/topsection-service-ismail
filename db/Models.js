@@ -19,7 +19,9 @@ class Model {
   }
 
   getOneWhere(params) {
+    
     const parsedParams = this.parseSelectQuery(params);
+    console.log(`SELECT * FROM ${this.tableName} WHERE ${parsedParams.fields}`, parsedParams.values )
     return queryAsync(`SELECT * FROM ${this.tableName} WHERE ${parsedParams.fields}`, parsedParams.values);
   }
 
@@ -36,7 +38,7 @@ class Course extends Model {
   }
 
   findCourseById(id) {
-    return this.getOneWhere({ id: 2 });
+    return this.getOneWhere({ id });
   }
 
 }
